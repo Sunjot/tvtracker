@@ -1,3 +1,3 @@
 # TV Tracker
 
-Never forget the episode you last stopped watching your favourite TV show.
+Keep tabs on all your favorite shows and never forget to catch the latest episodes.

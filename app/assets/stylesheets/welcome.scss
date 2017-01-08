@@ -1,3 +1,62 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  color: white;
+}
+
+.title {
+  padding-top: 200px;
+}
+
+.dash {
+  font-family: 'Raleway';
+  font-weight: bold;
+  padding-top: 130px;
+}
+
+.input-group {
+  color: grey;
+}
+
+.home_but {
+  margin-top: 5px;
+
+  &.right {
+    margin-left: 5px;
+  }
+}
+
+.show_search {
+  margin-top: 10px;
+}
+
+.placeholder {
+  font-style: italic;
+}
+
+.boxes > .container {
+
+  > a:link {
+    text-decoration: none;
+  }
+
+  > a > .jumbotron {
+    background-color: darkcyan;
+    padding: 0px;
+    height: 125px;
+    display: flex; // to vertical and horizontal align
+    align-items: center; // horizontal align; when diplay: flex, can't use text-align on the header
+    justify-content: center; // vertical align
+    > h3 {
+      color: white;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  > a > .jumbotron:hover {
+    background-color: #009999; // slightly lighter from darkcyan
+  }
+}

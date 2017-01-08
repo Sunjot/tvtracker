@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TV Tracker</title>
+  </head>
+  <body>
+    <div class="home text-center">
+      <h1 class="dash">Looking for a show?</h1><br />
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </span>
+            <%= form_tag("/search", method: "post", remote: true) do %>
+              <%= text_field_tag :show, "", class: 'search_form placeholder form-control', placeholder: 'Enter a series name', autocomplete: 'off'%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <div class="search_results">
+        
+      </div>
+    </div>
+  </body>
+</html>

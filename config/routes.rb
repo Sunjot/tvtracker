@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
-root 'welcome#index'
+  get 'search', to: 'search#query'
+  post 'search', to: 'search#query'
+
+  # Get and post requests for users
+  devise_for :users
+
+  # Get request on the homepage
+  get '/', to: 'welcome#index', as: 'home' # equivalent to root
 
 end

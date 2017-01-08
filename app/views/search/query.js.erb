@@ -1,0 +1,47 @@
+
+tvID = 1;
+myQuery = "<%= @query %>";
+myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502&query=" + myQuery;
+posterBaseUrl = "https://image.tmdb.org/t/p/w342" // base URL for each poster
+
+// Ajax request to themoviedb to get list of tv shows
+var dbRequest = {
+  "async": true,
+  "crossDomain": true,
+  "url": myUrl,
+  "method": "GET",
+  "headers": {},
+  "data": "{}"
+}
+
+// collects response from moviedb and we can do whatever with the data in here
+$.ajax(dbRequest).done(function (response) {
+  console.log(response);
+  $(".search_results").empty(); // clear results for every search
+
+  tvID = 1;
+  $.each(response["results"], function(i, value){ // each value = a tv show array with various info
+
+    if (value["poster_path"] == null) // if no poster, insert generic image instead
+      posterURL = "http://i.imgur.com/QOBPp8F.png"
+    else // otherwise, get poster
+      posterURL = posterBaseUrl + value["poster_path"];
+
+    // each row = a tv show with unique id
+    $(".search_results").append("<div class=\"row tv" + tvID + "\"></div><br><hr width=\"50%\">");
+    row = ".tv" + tvID;
+
+    // first append is the poster, and second append is the name and description
+    $(row).append("<div class=\"col-md-offset-3 col-md-2\"><img src=\"" + posterURL + "\" width=\"150\"></div>")
+    $(row).append("<div class=\"results text-left col-md-4\"><h2>" + value["name"] + "</h2><h5>" + value["overview"] + "</h5></div>")
+    tvID++;
+
+    if (i > 8) return false; // limit search results to 10
+  });
+
+  if (response["results"].length == 0) // if no search results, leave message
+    $(".search_results").append("<h4>Sorry, couldn't find any show with that name. Try a simpler search.</h4>");
+  else // otherwise, also leave message at bottom of results
+    $(".search_results").append("<h5>Not on the list? Searches are limited to 10 results. Try to be more specific.<h5><br>");
+
+});

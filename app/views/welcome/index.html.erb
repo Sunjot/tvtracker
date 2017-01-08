@@ -1,6 +1,41 @@
-<div class="home text-center">
-    <h1 class="title">TV Tracker</h1>
-    <h5>Never forget the episode you last stopped watching your favourite TV show!</h5>
-    <br />
-    <button type="button" class="btn btn-warning btn">Log In</button>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TV Tracker</title>
+  </head>
+  <body>
+    <div class="home text-center">
+      <% if user_signed_in? == false %>
+        <h1 class="text-center title">TV Tracker</h1>
+        <h5>Keep tabs on all your favorite shows and never forget to catch the latest episodes!</h5>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning home_but"%>
+        <%= link_to "Log In", new_user_session_path, class: "btn btn-warning home_but right"%>
+      <% else %>
+        <h1 class="text-center dash">Where would you like to go?</h1><br />
+          <div class="boxes row">
+              <div class=" container col-md-2 col-md-offset-3">
+                <%= link_to "/search" do %>
+                  <div class="jumbotron">
+                    <h3>Search</h3>
+                  </div>
+                <% end %>
+              </div>
+            <div class="container col-md-2">
+              <%= link_to "/" do %>
+                <div class="jumbotron">
+                  <h3>Dashboard</h3>
+                </div>
+              <% end %>
+            </div>
+            <div class="container col-md-2">
+              <%= link_to "/" do %>
+                <div class="jumbotron">
+                  <h3>Fancy Stats</h3>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </body>
+</html>
