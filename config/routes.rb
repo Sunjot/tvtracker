@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'about', to: 'info#about'
+
   get 'search', to: 'search#query'
   post 'search', to: 'search#query'
 

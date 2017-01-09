@@ -4,8 +4,9 @@
     <title>Tvtracker</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Raleway', type='text/css'%>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Raleway', type='text/css'%>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300', type='text/css'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -18,9 +19,31 @@
 
   <body>
     <% if user_signed_in? %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-warning log_out" %>
-      <%= link_to "Home", home_path, class: "btn btn-warning home_button" %>
+      <div class="row header text-center">
+        <%= link_to home_path, class: 'header-links' do %>
+          <div class="col-xs-1"><img class="logo" src="<%= asset_path('logo.png')%>"></img></div>
+        <% end %>
+
+        <%= link_to home_path, class: 'header-links' do %>
+          <div class="col-xs-1 col-xs-offset-4"><h3 class="home-header">Home</h3></div>
+        <% end %>
+
+        <%= link_to about_path, class: 'header-links' do %>
+          <div class="col-xs-1"><h3 class="home-header">About</h3></div>
+        <% end %>
+
+        <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
+          <div class="col-xs-1 col-xs-offset-4"><h3 class="log-out-header">Log Out</h3></div>
+        <% end %>
+      </div>
+
+      <footer>
+        <%= link_to about_path do %>
+          <div class="text-right attr-link"><h4>Attributions</h4></div>
+        <% end %>
+      </footer>
     <% end %>
+
     <%= yield %>
   </body>
 </html>

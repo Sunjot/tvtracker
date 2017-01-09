@@ -43,20 +43,21 @@
   }
 
   > a > .jumbotron {
-    background-color: darkcyan;
+    background-color: #f2f2f2;
     padding: 0px;
     height: 125px;
     display: flex; // to vertical and horizontal align
     align-items: center; // horizontal align; when diplay: flex, can't use text-align on the header
     justify-content: center; // vertical align
     > h3 {
-      color: white;
+      color: black;
       margin-top: 0;
       margin-bottom: 0;
+      font-family: 'Open Sans Condensed';
     }
   }
 
   > a > .jumbotron:hover {
-    background-color: #009999; // slightly lighter from darkcyan
+    background-color: #e6e6e6; // slightly lighter from darkcyan
   }
 }

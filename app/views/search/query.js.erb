@@ -28,12 +28,32 @@ $.ajax(dbRequest).done(function (response) {
       posterURL = posterBaseUrl + value["poster_path"];
 
     // each row = a tv show with unique id
-    $(".search_results").append("<div class=\"row tv" + tvID + "\"></div><br><hr width=\"50%\">");
+    $(".search_results").append("<div class=\"show row tv" + tvID + "\"></div><br><hr width=\"50%\">");
     row = ".tv" + tvID;
 
-    // first append is the poster, and second append is the name and description
-    $(row).append("<div class=\"col-md-offset-3 col-md-2\"><img src=\"" + posterURL + "\" width=\"150\"></div>")
-    $(row).append("<div class=\"results text-left col-md-4\"><h2>" + value["name"] + "</h2><h5>" + value["overview"] + "</h5></div>")
+    // append the poster
+    $(row).append(" \
+      <div class='col-md-offset-3 col-md-2'> \
+        <img src='" + posterURL + "' width='150'> \
+      </div> \
+    ")
+
+    desc = value["overview"].substring(0, 450); // store the first 450 characters of the overview
+    if (value["overview"][451])
+      desc_upd = desc + "..."; // if there were more than 450 characters, add an ellipsis to the end
+    else
+      desc_upd = desc; // if less than 450 characters, leave string as is
+
+    // append the name and description (only up to 450 characters to prevent large descriptions)
+    $(row).append(" \
+      <div class='results text-left col-md-4'> \
+        <h2>" + value["name"] +
+          "<button type='button' class='add_show btn btn-success btn-sm'>Add</button> \
+           <button type='button' class='show_info btn btn-info btn-sm'>More Info</button> \
+        </h2> \
+        <h5>" + desc_upd + "</h5> \
+      </div> \
+    ")
     tvID++;
 
     if (i > 8) return false; // limit search results to 10

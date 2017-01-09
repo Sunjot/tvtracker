@@ -5,3 +5,37 @@
 .results h2 {
   margin-top: 2px;
 }
+
+.add_show.btn-sm {
+  margin-left: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.show_info.btn-sm {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+// Fade in the show results
+
+.show.row { // each animation supports different browsers
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
+}
