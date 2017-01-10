@@ -1,7 +1,13 @@
 
+// Reset the search results to display nothing before the search page gets cached
+// This way when we revisit it doesn't restore previous results
+document.addEventListener("turbolinks:before-cache", function() {
+  $(".search_results").empty()
+  $(".search_form").val('') // clear text in the input form
+})
+
 tvID = 1;
-myQuery = "<%= @query %>";
-myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502&query=" + myQuery;
+myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502&query=" + "<%= @query %>";
 posterBaseUrl = "https://image.tmdb.org/t/p/w342" // base URL for each poster
 
 // Ajax request to themoviedb to get list of tv shows

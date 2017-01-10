@@ -13,7 +13,7 @@
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </span>
             <%= form_tag("/search", method: "post", remote: true) do %>
-              <%= text_field_tag :show, "", class: 'search_form placeholder form-control', placeholder: 'Enter a series name', autocomplete: 'off'%>
+              <%= text_field_tag :show, "", class: 'search_form placeholder form-control',  autocomplete: 'off'%>
             <% end %>
           </div>
         </div>
@@ -21,7 +21,7 @@
 
       <br />
       <div class="search_results">
-        
+
       </div>
     </div>
   </body>

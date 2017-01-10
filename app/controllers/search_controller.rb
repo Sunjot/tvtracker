@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
 
-  before_filter :authenticate_user! # execute acton in application controller to check for login
+  before_filter :authenticate_user! # execute action in application controller to check for login
 
   def query
 
