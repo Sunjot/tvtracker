@@ -34,7 +34,10 @@ $.ajax(dbRequest).done(function (response) {
       posterURL = posterBaseUrl + value["poster_path"];
 
     // each row = a tv show with unique id
-    $(".search_results").append("<div class=\"show row tv" + tvID + "\"></div><br><hr width=\"50%\">");
+    $(".search_results").append(" \
+      <div class='show row tv" + tvID +
+      " " + value["id"] + 
+      "'></div><br><hr width='50%'>");
     row = ".tv" + tvID;
 
     // append the poster
@@ -54,12 +57,19 @@ $.ajax(dbRequest).done(function (response) {
     $(row).append(" \
       <div class='results text-left col-md-4'> \
         <h2>" + value["name"] +
-          "<button type='button' class='add_show btn btn-success btn-sm'>Add</button> \
-           <button type='button' class='show_info btn btn-info btn-sm'>More Info</button> \
-        </h2> \
-        <h5>" + desc_upd + "</h5> \
+          '<div class="show_but row"> \
+            <div class="col-md-2 add_but"> \
+              <%= button_to "Add", add_path, remote: true, class: "add_show btn btn-success btn-sm", "data-toggle": "modal", "data-target": "#insertConf" %> \
+            </div> \
+            <div class="col-md-2 more_info_but"> \
+              <%= button_to "More Info", add_path, remote: true, class: "more_info btn btn-success btn-sm" %> \
+            </div> \
+          </div>' +
+        '</h2> \
+        <h5>' + desc_upd + "</h5> \
       </div> \
     ")
+
     tvID++;
 
     if (i > 8) return false; // limit search results to 10
