@@ -1,0 +1,22 @@
+
+<% @showIDs.each do |obj| %>
+
+  myUrl = "";
+  <% if obj.shid != nil then %>
+    myUrl = "https://api.themoviedb.org/3/tv/" + <%= obj.shid %> + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
+  <% end %>
+
+  var tvInfoRequest = {
+    "async": true,
+    "crossDomain": true,
+    "url": myUrl,
+    "method": "GET"
+  }
+
+  $.ajax(tvInfoRequest).done(function (response) {
+
+    console.log(response);
+
+  });
+
+<% end %>

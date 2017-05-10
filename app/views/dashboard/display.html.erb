@@ -7,7 +7,14 @@
     <div class="home text-center">
       <h1 class="dashboard">TV Collection</h1><br />
       <div class="all_shows">
-        
+        <% if @showCount < 2 %>
+          <h4>No shows! Add some by clicking here.</h4>
+        <% elsif @showCount > 1 %>
+          <h4>List shows here</h4>
+          <script type="text/javascript">
+            <%= render partial: 'display.js'%>
+          </script>
+        <% end %>
       </div>
     </div>
   </body>
