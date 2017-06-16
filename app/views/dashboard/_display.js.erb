@@ -24,10 +24,10 @@ posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
     if (response["name"] != null) {
       posterURL = posterBaseUrl + response["poster_path"];
       $(".show_list").last().append(' \
-        <div class="poster-container">\
+        <div class="poster-container ' + response["id"] + '">\
           <img class="poster" src="' + posterURL + '"></img> \
-          <%= button_to "Info", add_path, remote: true, class: "info btn btn-outline-success btn-sm" %> \
-          <%= button_to "Remove", add_path, remote: true, class: "remove btn btn-outline-success btn-sm" %> \
+          <%= button_to "Info", info_path, remote: true, class: "info btn btn-outline-success btn-sm" %> \
+          <%= button_to "Remove", remove_path, remote: true, class: "remove btn btn-outline-success btn-sm" %> \
         </div>');
     }
   });

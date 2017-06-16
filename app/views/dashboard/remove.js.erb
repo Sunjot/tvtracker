@@ -1,0 +1,7 @@
+$('.button_to').off('ajax:success').on('ajax:success', function() {
+
+  var id = $(this).parent().attr('class').split(" ")[1]; // get show id
+  $.ajax({type: "post", url: "/remove", data: {shID: id}}); // get value to controller action
+
+  $(this).parent('.poster-container').remove();
+});
