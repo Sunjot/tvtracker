@@ -5,12 +5,14 @@
   </head>
   <body>
     <div class="home text-center">
-      <h1 class="dashboard">TV Collection</h1><br />
+      <h1 class="dashboard">My Collection</h1><br />
       <div class="all_shows">
-        <% if @showCount < 2 %>
+        <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
           <h4>No shows! Add some by clicking here.</h4>
         <% elsif @showCount > 1 %>
-          <h4>List shows here</h4>
+          <div class="show_list">
+
+          </div>
           <script type="text/javascript">
             <%= render partial: 'display.js'%>
           </script>

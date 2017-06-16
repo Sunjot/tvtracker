@@ -1,9 +1,16 @@
 
+
+
+posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
+
+var count = 0;
+
 <% @showIDs.each do |obj| %>
 
   myUrl = "";
   <% if obj.shid != nil then %>
     myUrl = "https://api.themoviedb.org/3/tv/" + <%= obj.shid %> + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
+    console.log(myUrl);
   <% end %>
 
   var tvInfoRequest = {
@@ -15,7 +22,28 @@
 
   $.ajax(tvInfoRequest).done(function (response) {
 
-    console.log(response);
+    if (response["name"] != null) {
+
+      if (count == 0) {
+        $(".show_list").append("<div class='row row-space'>");
+      }
+
+      posterURL = posterBaseUrl + response["poster_path"];
+      $(".show_list > .row ").last().append(' \
+      <div class="col-md-2"> \
+        <div class="poster-container">\
+          <img class="poster" src="' + posterURL + '"></img> \
+          <%= button_to "Info", add_path, remote: true, class: "info btn btn-outline-success btn-sm" %> \
+          <%= button_to "Remove", add_path, remote: true, class: "remove btn btn-outline-success btn-sm" %> \
+        </div> \
+      </div>');
+
+      count = count + 1;
+      if (count == 6) {
+        $(".show_list").append("</div>");
+        count = 0;
+      }
+    }
 
   });
 
