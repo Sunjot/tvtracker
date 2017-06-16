@@ -1,11 +1,10 @@
-
-
+document.addEventListener("turbolinks:before-cache", function() {
+  $(".show_list").empty()
+})
 
 posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
 
-var count = 0;
-
-<% @showIDs.each do |obj| %>
+<% @showIDs.each do |obj| %> // go through each show, hit tmdb api to fetch json, then display data
 
   myUrl = "";
   <% if obj.shid != nil then %>
@@ -23,28 +22,14 @@ var count = 0;
   $.ajax(tvInfoRequest).done(function (response) {
 
     if (response["name"] != null) {
-
-      if (count == 0) {
-        $(".show_list").append("<div class='row row-space'>");
-      }
-
       posterURL = posterBaseUrl + response["poster_path"];
-      $(".show_list > .row ").last().append(' \
-      <div class="col-md-2"> \
+      $(".show_list").last().append(' \
         <div class="poster-container">\
           <img class="poster" src="' + posterURL + '"></img> \
           <%= button_to "Info", add_path, remote: true, class: "info btn btn-outline-success btn-sm" %> \
           <%= button_to "Remove", add_path, remote: true, class: "remove btn btn-outline-success btn-sm" %> \
-        </div> \
-      </div>');
-
-      count = count + 1;
-      if (count == 6) {
-        $(".show_list").append("</div>");
-        count = 0;
-      }
+        </div>');
     }
-
   });
 
 <% end %>

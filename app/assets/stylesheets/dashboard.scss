@@ -19,12 +19,13 @@
 .poster-container {
   position:relative;
   display:inline-block;
+  margin: 5px;
 }
 
 .btn.info {
   position:absolute;
   bottom:55%;
-  right:25%;
+  right:28%;
   width:80px;
   height:30px;
   background: none;
@@ -35,7 +36,7 @@
 .btn.remove {
   position:absolute;
   bottom:30%;
-  right:25%;
+  right:28%;
   width:80px;
   height:30px;
   background: none;
@@ -61,5 +62,31 @@
 }
 
 .poster {
-  width: 165px;
+  width: 185px;
+}
+
+.show_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  // each animation supports different browsers
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  from {opacity: 0; }
+  to {opacity: 1; }
 }
