@@ -3,5 +3,18 @@ $('.button_to').off('ajax:success').on('ajax:success', function() {
   var id = $(this).parent().attr('class').split(" ")[1]; // get show id
   $.ajax({type: "post", url: "/remove", data: {shID: id}}); // get value to controller action
 
-  $(this).parent('.poster-container').remove();
+  $(this).siblings('.poster')[0].classList.add("slide-out"); // add slide-out class to transition poster off page
+
+  // hides the 2 buttons when sliding out the poster
+  this.classList.add("disappear");
+  // had difficulty with the first button - had to call parent and then collect child element
+  var temp = $(this).parent('.poster-container').children()[1].classList.add("disappear");
+
+  // executes after the transition is complete
+  $(this).siblings('.poster')[0].addEventListener(
+     'webkitTransitionEnd',
+     function( event ) {
+         $(this).parent('.poster-container').remove(); // actually removes the poster from display
+     }, false );
+
 });

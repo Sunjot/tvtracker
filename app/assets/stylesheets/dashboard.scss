@@ -63,6 +63,15 @@
 
 .poster {
   width: 185px;
+  transition: width 2s;
+}
+
+.slide-out {
+  width: 0px;
+}
+
+.disappear {
+  opacity: 0;
 }
 
 .show_list {
