@@ -53,6 +53,7 @@
 
   .poster {
     filter: brightness(30%);
+    -webkit-filter: brightness(30%); // for safari
   }
 
   .btn.info, .btn.remove {
@@ -63,7 +64,7 @@
 
 .poster {
   width: 185px;
-  transition: width 2s;
+  transition: width 0.8s;
 }
 
 .slide-out {
