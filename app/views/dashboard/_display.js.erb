@@ -1,5 +1,7 @@
+
+// prevents caching so results dont load over previously displayed results
 document.addEventListener("turbolinks:before-cache", function() {
-  $(".show_list").empty()
+  $(".all_shows").empty()
 })
 
 posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
