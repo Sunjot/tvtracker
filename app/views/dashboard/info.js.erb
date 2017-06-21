@@ -1,0 +1,10 @@
+
+// the .off prevents an extra event handler from being added every execution...not sure why
+$('.button_to').off('ajax:success').on('ajax:success', function() {
+
+  var id = $(this).closest(".poster-container").attr('class').split(" ")[1];
+
+  console.log(id);
+
+  $.ajax({type: "post", url: "/info", data: {shID: id}}) // send show name back to controller action
+});

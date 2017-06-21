@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'dashboard', to: 'dashboard#display'
-  get 'info', to: 'dashboard#info'
+  post 'info', to: 'dashboard#info'
   post 'remove', to: 'dashboard#remove'
 
   get 'about', to: 'info#about'
