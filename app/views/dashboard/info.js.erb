@@ -4,7 +4,21 @@ $('.button_to').off('ajax:success').on('ajax:success', function() {
 
   var id = $(this).closest(".poster-container").attr('class').split(" ")[1];
 
-  console.log(id);
+  myUrl = "";
+  myUrl = "https://api.themoviedb.org/3/tv/" + id + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
 
-  $.ajax({type: "post", url: "/info", data: {shID: id}}) // send show name back to controller action
+  var tvInfoRequest = {
+    "async": true,
+    "crossDomain": true,
+    "url": myUrl,
+    "method": "GET"
+  }
+
+  $.ajax(tvInfoRequest).done(function (response) {
+
+    if (response["name"] != null) {
+      $(".show-info").html('<h4 class="modal-title"> The show name is: ' + response["name"] + '</h4>');
+    }
+  });
+
 });

@@ -4,18 +4,9 @@ class DashboardController < ApplicationController
 
   def info
 
-    if params[:shID].present? # when ajax request contains show id
-      @showID = params[:shID]
-
-      respond_to do |format|
-        format.js { render action: "show" } # execute show.js.erb to render partial
-      end
-
-    else # clicking the info button
       respond_to do |format|
         format.js
       end
-    end
 
   end
 

@@ -11,7 +11,6 @@ posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
   myUrl = "";
   <% if obj.shid != nil then %>
     myUrl = "https://api.themoviedb.org/3/tv/" + <%= obj.shid %> + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
-    console.log(myUrl);
   <% end %>
 
   var tvInfoRequest = {
