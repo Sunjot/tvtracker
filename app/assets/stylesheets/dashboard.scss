@@ -100,3 +100,53 @@
   from {opacity: 0; }
   to {opacity: 1; }
 }
+
+/* SHOW MODAL */
+
+.info-box {
+  width:700px;
+}
+
+.show-info {
+  display: flex;
+  flex-flow: row;
+}
+
+.show-pic {
+  margin-right: 10px;
+}
+
+.show-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-header {
+  display: flex;
+  width: 470px;
+}
+
+.show-date {
+  margin-left: 5px;
+
+}
+
+.show-genres {
+  font-size: 12px;
+  font-family: 'Raleway';
+}
+
+.top-line {
+  width: 400px;
+  border: 0.5px solid #e6e6e6; //overwrite existing border
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+}
+
+.show-desc {
+  width: 400px;
+  font-family: 'Raleway';
+}
+
+/* SHOW MODAL END */
