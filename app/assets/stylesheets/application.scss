@@ -21,6 +21,7 @@
 html {
   min-height: 100%;
   position: relative;
+  font-size: 100%;
 }
 
 body {
@@ -74,21 +75,20 @@ body {
   top: 0px;
   height: 60px;
   background-color: #f2f2f2;
-
-  h3 {
-    margin-top: 0px;
-    font-family: 'Open Sans Condensed';
-    padding-top: 15px;
-  }
+  display: flex;
+  justify-content: space-between;
 }
 
-.header-links {
-  color: black;
-}
-
+/* START - put spacing outside of the corner links */
 .logo {
   padding-top: 10px;
+  padding-left: 10px;
 }
+
+.log-out-link {
+  padding-right: 10px;
+}
+/* END */
 
 footer {
     background-color: #f2f2f2;
@@ -106,5 +106,46 @@ footer {
     font-family: 'Open Sans Condensed';
     color: black;
     padding-right: 8px;
+  }
+}
+
+.main-links {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.header-links {
+  font-size: 1.7rem;
+  margin-top: 0px;
+  font-family: 'Open Sans Condensed';
+  padding-top: 10px;
+  color: black;
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 100%;
+  }
+  .main-links {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+  .main-links {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 70%;
+  }
+  .main-links {
+    width: 100px;
   }
 }
