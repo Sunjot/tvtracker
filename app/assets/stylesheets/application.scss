@@ -83,6 +83,8 @@ body {
 .logo {
   padding-top: 10px;
   padding-left: 10px;
+  width: 42px;
+  height: auto;
 }
 
 .log-out-link {
@@ -95,17 +97,22 @@ footer {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 40px;
+    height: 27px;
     width: 100%;
     overflow:hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.attr-link {
+.footer-links {
+  font-family: 'Open Sans Condensed';
+  color: black;
+  padding-right: 8px;
+  font-size: 1.1rem;
 
-  h4 {
-    font-family: 'Open Sans Condensed';
-    color: black;
-    padding-right: 8px;
+  p {
+    margin-bottom: 3px;
   }
 }
 
@@ -130,6 +137,12 @@ footer {
   .main-links {
     width: 200px;
   }
+  .logo {
+    width: 42px;
+  }
+  .header {
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -139,6 +152,12 @@ footer {
   .main-links {
     width: 150px;
   }
+  .logo {
+    width: 37px;
+  }
+  .header {
+    height: 50px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -147,5 +166,11 @@ footer {
   }
   .main-links {
     width: 100px;
+  }
+  .logo {
+    width: 32px;
+  }
+  .header {
+    height: 40px;
   }
 }
