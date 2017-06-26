@@ -14,6 +14,7 @@
   font-family: 'Raleway';
   font-weight: bold;
   padding-top: 130px;
+  font-size: 2.5rem;
 }
 
 .input-group {
@@ -36,28 +37,72 @@
   font-style: italic;
 }
 
+.boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .boxes > .container {
 
-  > a:link {
+  margin-left: 0px;
+  margin-right: 0px;
+
+  > a:link { // removes underline when hovering over text link
     text-decoration: none;
   }
+}
 
-  > a > .jumbotron {
-    background-color: #f2f2f2;
-    padding: 0px;
-    height: 125px;
-    display: flex; // to vertical and horizontal align
-    align-items: center; // horizontal align; when diplay: flex, can't use text-align on the header
-    justify-content: center; // vertical align
-    > h3 {
-      color: black;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-family: 'Open Sans Condensed';
-    }
+.jumbotron {
+  background-color: #f2f2f2;
+  padding: 0px;
+  height: 125px;
+  display: flex;
+  align-items: center; // horizontal align
+  justify-content: center; // vertical align
+  > p {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 5px !important; // was leaving 15px margin, so had to force change
+    font-family: 'Open Sans Condensed';
+  }
+}
+
+.jumbotron:hover {
+  background-color: #e6e6e6; // slightly lighter from darkcyan
+}
+
+@media (max-width: 1280px) {
+  .container { // ensures the container doesn't stretch to fill viewport
+    max-width: 200px;
+    min-width: 200px;
   }
 
-  > a > .jumbotron:hover {
-    background-color: #e6e6e6; // slightly lighter from darkcyan
+  .jumbotron { // prevents line breaks using p tag
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container { // ensures the container doesn't stretch to fill viewport
+    max-width: 150px;
+    min-width: 150px;
+  }
+
+  .jumbotron {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boxes { // once we reach tablet/phone sizes we change flex to display boxes vertically
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .dash { // reduce spacing above title
+    padding-top: 50px;
   }
 }

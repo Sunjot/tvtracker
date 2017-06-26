@@ -11,26 +11,26 @@
         <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning home_but"%>
         <%= link_to "Log In", new_user_session_path, class: "btn btn-warning home_but right"%>
       <% else %>
-        <h1 class="text-center dash">Where would you like to go?</h1><br />
-          <div class="boxes row">
-            <div class=" container col-md-2 col-md-offset-3">
+        <p class="text-center dash">Where would you like to go?</p><br />
+          <div class="boxes">
+            <div class="container">
                 <%= link_to "/search" do %>
                   <div class="jumbotron">
-                    <h3>Search</h3>
+                    <p>Search</p>
                   </div>
                 <% end %>
-              </div>
-            <div class="container col-md-2">
+            </div>
+            <div class="container">
               <%= link_to "/dashboard" do %>
                 <div class="jumbotron">
-                  <h3>Dashboard</h3>
+                  <p>Dashboard</p>
                 </div>
               <% end %>
             </div>
-            <div class="container col-md-2">
+            <div class="container">
               <%= link_to "/" do %>
                 <div class="jumbotron">
-                  <h3>Fancy Stats</h3>
+                  <p>Fancy Stats</p>
                 </div>
               <% end %>
             </div>
