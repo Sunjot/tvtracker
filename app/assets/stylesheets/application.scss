@@ -89,6 +89,10 @@ body {
 
 .log-out-link {
   padding-right: 10px;
+
+  p {
+    text-decoration: none;
+  }
 }
 /* END */
 
@@ -109,10 +113,10 @@ footer {
   font-family: 'Open Sans Condensed';
   color: black;
   padding-right: 8px;
-  font-size: 1.1rem;
+  font-size: 17px;
 
   p {
-    margin-bottom: 3px;
+    margin-bottom: 0px;
   }
 }
 
@@ -128,6 +132,10 @@ footer {
   font-family: 'Open Sans Condensed';
   padding-top: 10px;
   color: black;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1280px) {
