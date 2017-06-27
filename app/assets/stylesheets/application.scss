@@ -33,9 +33,15 @@ body {
 
 /* DEVISE CSS */
 
+.auth-container {
+  display: flex;
+  justify-content: center;
+}
+
 .auth-window {
   margin-top: 20vh;
   background-color: white;
+  width: 400px;
 }
 
 .sign-up {
