@@ -42,7 +42,7 @@ $.ajax(dbRequest).done(function (response) {
 
     // append the poster
     $(row).append(" \
-      <div class='col-md-offset-3 col-md-2'> \
+      <div class='poster'> \
         <img src='" + posterURL + "' width='150'> \
       </div> \
     ")
@@ -54,21 +54,20 @@ $.ajax(dbRequest).done(function (response) {
       desc_upd = desc; // if less than 450 characters, leave string as is
 
     // append the name and description (only up to 450 characters to prevent large descriptions)
-    $(row).append(" \
-      <div class='results text-left col-md-4'> \
-        <h2>" + value["name"] +
-          '<div class="show_but row"> \
-            <div class="col-md-2 add_but"> \
-              <%= button_to "Add", add_path, remote: true, class: "add_show btn btn-success btn-sm", "data-toggle": "modal", "data-target": "#insertConf" %> \
-            </div> \
-            <div class="col-md-2 more_info_but"> \
-              <%= button_to "More Info", add_path, remote: true, class: "more_info btn btn-success btn-sm" %> \
-            </div> \
-          </div>' +
-        '</h2> \
-        <h5>' + desc_upd + "</h5> \
+    $(row).append(' \
+      <div class="show-desc results text-left"> \
+        <h2>' + value["name"] + '</h2> \
+        <div class="show_but"> \
+          <div class="add_but"> \
+            <%= button_to "Add", add_path, remote: true, class: "add_show btn btn-success btn-sm", "data-toggle": "modal", "data-target": "#insertConf" %> \
+          </div> \
+          <div class="more_info_but"> \
+            <%= button_to "More Info", add_path, remote: true, class: "more_info btn btn-success btn-sm" %> \
+          </div> \
+        </div> \
+        <h5>' + desc_upd + '</h5> \
       </div> \
-    ")
+    ')
 
     tvID++;
 
