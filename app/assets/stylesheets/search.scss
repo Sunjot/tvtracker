@@ -6,6 +6,13 @@
   margin-top: 2px;
 }
 
+.search-title {
+  font-size: 2.2rem;
+  font-family: 'Open Sans Condensed';
+  font-weight: bold;
+  padding-top: 130px;
+}
+
 /* START - For the search bar */
 .search-container {
   display: flex;
@@ -76,6 +83,33 @@
 .modal {
   text-align: center;
 }
+
+/* START - responsive design for smaller screens */
+@media (max-width: 1280px) {
+
+  .input-group { // drop width of search bar as window gets smaller
+    width: 500px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .input-group {
+    width: 450px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .input-group {
+    width: 350px;
+  }
+
+}
+
+/* END */
 
 @media screen and (min-width: 768px) {
   .modal:before {
