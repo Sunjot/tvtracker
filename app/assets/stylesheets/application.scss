@@ -93,13 +93,6 @@ body {
   height: auto;
 }
 
-.log-out-link {
-  padding-right: 10px;
-
-  p {
-    text-decoration: none;
-  }
-}
 /* END */
 
 footer {
@@ -128,8 +121,9 @@ footer {
 
 .main-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 200px;
+  padding-right: 10px;
 }
 
 .header-links {
@@ -138,6 +132,20 @@ footer {
   font-family: 'Open Sans Condensed';
   padding-top: 10px;
   color: black;
+}
+
+.header-separator {
+  border-left: 1px solid black;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.about-link {
+  padding-right: 10px;
+}
+
+.log-out-link {
+  padding-left: 10px;
 }
 
 a:link {

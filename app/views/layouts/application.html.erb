@@ -26,18 +26,18 @@
         <% end %>
 
         <div class="main-links">
-          <%= link_to home_path, class: 'header-links' do %>
-            <p>Home</p>
+          <%= link_to about_path, class: 'header-links about-link' do %>
+            <p>About</p>
           <% end %>
 
-          <%= link_to about_path, class: 'header-links' do %>
-            <p>About</p>
+          <div class="header-separator">
+          </div>
+
+          <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
+            <p class="log-out-link">Log out</p>
           <% end %>
         </div>
 
-        <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
-          <p class="log-out-link">Log out</p>
-        <% end %>
       </div>
 
       <footer>
