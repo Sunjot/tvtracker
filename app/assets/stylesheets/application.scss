@@ -19,7 +19,7 @@
  @import "bootstrap";
 
 html {
-  min-height: 100%;
+  height: 100%;
   position: relative;
   font-size: 100%;
 }
@@ -28,7 +28,9 @@ body {
   background: #085078; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #3D8CB2 , #314755); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #3D8CB2 , #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  margin: 0 0 40px; /* bottom = footer height */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* DEVISE CSS */
@@ -78,9 +80,11 @@ body {
 }
 
 .header {
-  top: 0px;
   height: 60px;
   background-color: #f2f2f2;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
 }
@@ -97,12 +101,8 @@ body {
 
 footer {
     background-color: #f2f2f2;
-    position: absolute;
-    left: 0;
-    bottom: 0;
     height: 60px;
-    width: 100%;
-    overflow:hidden;
+    order: 3;
 }
 
 .footer-container {
@@ -147,8 +147,37 @@ a:link {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1280px) {
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+
+@media (min-width: 400px) {
+
+  html { // small font size for mobile devices
+    font-size: 70%;
+  }
+  .logo { // increase logo size as width increases
+    width: 32px;
+  }
+  .header { // increase navbar height as width increases
+    height: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+
   html {
+    font-size: 80%;
+  }
+  .logo {
+    width: 37px;
+  }
+  .header {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  html { // default font size when width between 1280px and 1680px
     font-size: 100%;
   }
   .logo {
@@ -159,34 +188,29 @@ a:link {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 1680px) {
+
   html {
-    font-size: 80%;
+    font-size: 120%;
   }
   .logo {
-    width: 37px;
+    width: 47px;
   }
   .header {
-    height: 50px;
-  }
-  .header-separator {
-    height: 25px;
-    margin-top: 13px;
+    height: 65px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media (min-width: 1920px) {
+
   html {
-    font-size: 70%;
+    font-size: 130%;
   }
   .logo {
-    width: 32px;
+    width: 52px;
   }
   .header {
-    height: 40px;
+    height: 70px;
   }
-  .header-separator {
-    height: 20px;
-    margin-top: 13px;
-  }
+
 }
