@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tvtracker</title>
+    <title>TvTracker</title>
     <link rel="icon" href="<%= asset_path('favicon.ico')%>" />
     <%= csrf_meta_tags %>
 
@@ -25,14 +25,7 @@
           <div><img class="logo" src="<%= asset_path('logo.png')%>"></img></div>
         <% end %>
 
-        <div class="main-links">
-          <%= link_to about_path, class: 'header-links about-link' do %>
-            <p>About</p>
-          <% end %>
-
-          <div class="header-separator">
-          </div>
-
+        <div class="side-links">
           <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
             <p class="log-out-link">Log out</p>
           <% end %>
@@ -41,10 +34,22 @@
       </div>
 
       <footer>
-        <%= link_to about_path, class: 'footer-links' do %>
-          <div><p>Attributions</p></div>
-        <% end %>
+        <div class="footer-container">
+          <!-- all temporarily point to about page  -->
+          <%= link_to about_path, class: 'footer-links' do %>
+            <p>About</p>
+          <% end %>
+
+          <%= link_to about_path, class: 'footer-links' do %>
+            <p>News</p>
+          <% end %>
+
+          <%= link_to about_path, class: 'footer-links' do %>
+            <div><p>Attributions</p></div>
+          <% end %>
+        </div>
       </footer>
+
     <% end %>
 
     <%= yield %>
