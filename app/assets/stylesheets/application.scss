@@ -25,16 +25,15 @@ html {
 }
 
 body {
-  background: #085078; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #3D8CB2 , #314755); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #3D8CB2 , #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  // background: #f0f2f1;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .main-content {
-  color: white;
+  color: #383838;
   flex: 1 0 auto; // allows the main content to take up entire page and leave footer at bottom
 }
 
@@ -86,12 +85,13 @@ body {
 
 .header {
   height: 60px;
-  background-color: #f2f2f2;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
+  //background-color: #8091b7;
+  border-bottom: 1px #a8a6a6 solid;
 }
 
 .logo {
@@ -102,7 +102,7 @@ body {
 }
 
 footer {
-    background-color: #f2f2f2;
+    background-color: #8091b7;
     height: 60px;
     order: 3;
 }

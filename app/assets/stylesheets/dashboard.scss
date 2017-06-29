@@ -5,7 +5,28 @@
 .dashboard {
   font-family: 'Raleway';
   font-weight: bold;
+  font-size: 2rem;
   padding-top: 40px;
+}
+
+.dash-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+}
+
+.right-display {
+  display: flex;
+  justify-content: center;
+  width: 29%;
+  border-left: 1px #a8a6a6 solid;
 }
 
 .all_shows {
@@ -85,6 +106,8 @@
   -moz-animation: fadein 2s;
   animation: fadein 2s;
 }
+
+
 
 @keyframes fadein {
   from {opacity: 0; }

@@ -4,19 +4,26 @@
     <title>TV Tracker - Dashboard</title>
   </head>
   <body>
-    <div class="main-content text-center">
-      <h1 class="dashboard">My Collection</h1><br />
-      <div class="all_shows">
-        <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
-          <h4>No shows! Add some by clicking here.</h4>
-        <% elsif @showCount > 1 %>
-          <div class="show_list">
+    <div class="main-content dash-container text-center">
 
-          </div>
-          <script type="text/javascript">
-            <%= render partial: 'display.js'%>
-          </script>
-        <% end %>
+      <div class="left-display">
+        <p class="dashboard">My Collection</p><br />
+        <div class="all_shows">
+          <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
+            <h4>No shows! Add some by clicking here.</h4>
+          <% elsif @showCount > 1 %>
+            <div class="show_list">
+
+            </div>
+            <script type="text/javascript">
+              <%= render partial: 'display.js'%>
+            </script>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="right-display">
+        <p class="dashboard">Schedule</p>
       </div>
     </div>
 
