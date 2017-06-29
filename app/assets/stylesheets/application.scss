@@ -33,6 +33,11 @@ body {
   height: 100%;
 }
 
+.main-content {
+  color: white;
+  flex: 1 0 auto; // allows the main content to take up entire page and leave footer at bottom
+}
+
 /* DEVISE CSS */
 
 .auth-container {

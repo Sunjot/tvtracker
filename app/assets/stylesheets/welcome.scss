@@ -2,17 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home {
-  color: white;
-  flex: 1 0 auto;
-}
-
-.welcome {
+.welcome { // Puts the title "where to go" and 3-jumbotron container vertically and in the center
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90%;
 }
 
 .dash {
