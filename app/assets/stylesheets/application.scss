@@ -94,15 +94,12 @@ body {
   justify-content: space-between;
 }
 
-/* START - put spacing outside of the corner links */
 .logo {
   padding-top: 10px;
   padding-left: 10px;
   width: 42px;
   height: auto;
 }
-
-/* END */
 
 footer {
     background-color: #f2f2f2;
@@ -151,6 +148,19 @@ footer {
 a:link {
   text-decoration: none;
 }
+
+/* START - Vertically centers modals */
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+.close-button-modal {
+  text-align: right;
+}
+/* END */
 
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
 
