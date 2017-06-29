@@ -27,6 +27,10 @@
           <% end %>
 
           <div class="side-links">
+            <%= link_to about_path, class: 'header-links' do %>
+              <p>My Account</p>
+            <% end %>
+
             <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
               <p class="log-out-link">Log out</p>
             <% end %>
