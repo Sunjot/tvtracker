@@ -24,6 +24,7 @@
 
 .right-display {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 29%;
   border-left: 1px #dbdbdb solid;
