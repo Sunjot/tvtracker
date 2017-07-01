@@ -44,23 +44,8 @@
   margin: 5px;
 }
 
-.btn.info {
+.btn.info, .btn.remove {
   position:absolute;
-  bottom:55%;
-  right:28%;
-  width:80px;
-  height:30px;
-  background: none;
-  border: 2px solid white;
-  opacity: 0;
-}
-
-.btn.remove {
-  position:absolute;
-  bottom:30%;
-  right:28%;
-  width:80px;
-  height:30px;
   background: none;
   border: 2px solid white;
   opacity: 0;
@@ -71,21 +56,8 @@
   border: 2px solid #D1C3C3;
 }
 
-.poster-container:hover {
-
-  .poster {
-    filter: brightness(30%);
-    -webkit-filter: brightness(30%); // for safari
-  }
-
-  .btn.info, .btn.remove {
-    opacity: 1;
-  }
-
-}
-
 .poster {
-  width: 185px;
+  width: 170px;
   transition: width 0.8s;
 }
 
@@ -174,3 +146,115 @@
 }
 
 /* SHOW MODAL END */
+
+/* USE FOR MOBILE DEVICES
+
+.full-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #F5F1DE;
+}
+
+*/
+
+@media (min-width: 400px) {
+
+  .poster {
+    width: 80px;
+  }
+
+  .poster-container:hover { // only hover
+
+    .poster {
+      filter: brightness(30%);
+      -webkit-filter: brightness(30%);
+    }
+
+    .btn.info, .btn.remove {
+      opacity: 1;
+    }
+  }
+
+  .btn.info {
+    bottom:55%;
+    right:25%;
+    width:50%;
+    height:18px;
+    font-size: 8px;
+    padding-top: 0px;
+  }
+
+  .btn.remove {
+    bottom:30%;
+    right:25%;
+    width:50%;
+    height:18px;
+    font-size: 8px;
+    padding-top: 0px;
+    padding-left: 3px;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .poster {
+    width: 140px;
+  }
+
+  .btn.info {
+    bottom:55%;
+    right:25%;
+    width:50%;
+    height:30px;
+    font-size: 11px;
+    padding-top: 5px;
+  }
+
+  .btn.remove {
+    bottom:30%;
+    right:25%;
+    width:50%;
+    height:30px;
+    font-size: 11px;
+    padding-top: 5px;
+    padding-left: 10px;
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  .poster {
+    width: 170px;
+  }
+
+  .btn.info {
+    bottom:55%;
+    right:25%;
+    width:50%;
+    height:30px;
+    font-size: 12px;
+  }
+
+  .btn.remove {
+    bottom:30%;
+    right:25%;
+    width:50%;
+    height:30px;
+    font-size: 12px;
+  }
+
+}
+
+@media (min-width: 1680px) {
+
+
+}
+
+@media (min-width: 1920px) {
+
+
+
+}
