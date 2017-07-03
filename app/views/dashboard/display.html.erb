@@ -6,27 +6,36 @@
   <body>
     <div class="main-content dash-container text-center">
 
-      <div class="left-display">
-        <p class="dashboard">My Collection</p><br />
-        <div class="all_shows">
-          <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
-            <h4>No shows! Add some by clicking here.</h4>
-          <% elsif @showCount > 1 %>
-            <div id="post-cont-deleg" class="show_list">
-
-            </div>
-            <script type="text/javascript">
-              <%= render partial: 'display.js'%>
-            </script>
-          <% end %>
+      <div class="title-container">
+        <div class="title-links-container">
+          <div class="title-links">
+            <p id="coll-click" class="dashboard"><span>Collection</span></p>
+            <p id="sched-click" class="dashboard"><span>Schedule</span></p>
+          </div>
+          <hr id="slide-hr" />
         </div>
       </div>
+      <div class="tab-container">
+        <div class="coll-tab">
+          <div class="all_shows">
+            <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
+              <h4>No shows! Add some by clicking here.</h4>
+            <% elsif @showCount > 1 %>
+              <div id="post-cont-deleg" class="show_list">
 
-      <div class="right-display">
-        <p class="dashboard">Schedule</p>
-        <p>
-          Nothing implemented yet.
-        </p>
+              </div>
+              <script type="text/javascript">
+                <%= render partial: 'display.js'%>
+              </script>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="sched-tab">
+          <h3>
+            Weekly schedule, etc. here
+          </h3>
+        </div>
       </div>
     </div>
 

@@ -11,23 +11,73 @@
 
 .dash-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.left-display {
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 200%;
+  transition: margin-left 1.5s;
+  -webkit-transition: margin-left 1.5s;
+  -moz-transition: margin-left 1.5s;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-links-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
+  align-items: flex-start;
+
+  > hr {
+    width: 48%;
+    height: 2px;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-left: 0%;
+    transition: margin-left 1s;
+    -webkit-transition: margin-left 1s, width 1s;
+    -moz-transition: margin-left 1s, width 1s;
+  }
 }
 
-.right-display {
+.title-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  > #coll-click {
+    padding-right: 10px;
+  }
+
+  > #sched-click {
+    padding-left: 10px;
+  }
+
+  .dashboard span {
+    cursor: pointer;
+  }
+}
+
+.coll-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.sched-tab {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 29%;
-  border-left: 1px #dbdbdb solid;
+  width: 100%;
 }
 
 .all_shows {
@@ -80,7 +130,27 @@
   animation: fadein 2s;
 }
 
+@keyframes slidein {
+  from { margin-right: -100%; }
+  to { margin-right: 0%; }
+}
 
+@-webkit-keyframes slidein {
+  from { margin-right: -100%; }
+  to { margin-right: 0%; }
+}
+
+@-moz-keyframes slidein {
+  from { margin-right: -100%; }
+  to { margin-right: 0%; }
+}
+
+.slide-in-act {
+  -webkit-animation: slidein 2s;
+  -moz-animation: slidein 2s;
+  animation: slidein 2s;
+  animation-fill-mode: forwards;
+}
 
 @keyframes fadein {
   from {opacity: 0; }

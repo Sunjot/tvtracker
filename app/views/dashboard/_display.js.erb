@@ -44,3 +44,19 @@ posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
       e.target.parentElement.insertBefore(div, e.target);
     }
   }); */
+
+document.getElementById("sched-click").addEventListener(("click"), function(e){
+
+  document.getElementsByClassName("tab-container")[0].style.marginLeft = "-100%";
+  document.getElementById("slide-hr").style.marginLeft = "55%";
+  document.getElementById("slide-hr").style.width = "45%";
+
+});
+
+document.getElementById("coll-click").addEventListener(("click"), function(e){
+
+  document.getElementsByClassName("tab-container")[0].style.marginLeft = "0%";
+  document.getElementById("slide-hr").style.marginLeft = "0%";
+  document.getElementById("slide-hr").style.width = "48%";
+
+});
