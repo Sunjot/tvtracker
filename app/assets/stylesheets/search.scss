@@ -20,6 +20,13 @@
   font-weight: bold;
 }
 
+.query-poster {
+
+  > img {
+    width: 150px;
+  }
+}
+
 /* START - For the search bar */
 .search-container {
   display: flex;
@@ -46,19 +53,33 @@
 
   display: flex !important;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0;
+  width: 600px; // using fixed width for each show result instead of %s
 }
 
 .show-desc {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 65%; // takes up 65% of the total width (600px from above), which is 390px
+
+  p { // didnt use rem because I had specific preference
+    font-size: 14px;
+  }
+}
+
+.show-name {
+  font-size: 1.6rem !important;
+  margin: 0;
 }
 
 .show_but {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .add_but {
@@ -83,23 +104,76 @@
 
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN  */
 
-@media (max-width: 1280px) {
-
-  .input-group { // drop width of search bar as window gets smaller
-    width: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .input-group {
-    width: 450px;
-  }
-}
-
-@media (max-width: 480px) {
+@media (min-width: 400px) {
 
   .input-group {
     width: 350px;
   }
+
+  .query-poster > img {
+    width: 100px;
+  }
+
+  .show.row {
+    width: 400px;
+  }
+
+  .show-desc p {
+    font-size: 12px;
+  }
+
+  .add_show, .more_info {
+    height: 20px;
+    padding: 1px 5px !important;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .input-group {
+    width: 450px;
+  }
+
+  .query-poster > img {
+    width: 150px;
+  }
+
+  .show.row {
+    width: 600px;
+  }
+
+  .show-desc p {
+    font-size: 14px;
+  }
+
+  .add_show, .more_info {
+    height: 32px;
+    padding: 5px 10px;
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  .input-group {
+    width: 500px;
+  }
+
+  .show.row {
+    width: 600px;
+  }
+
+}
+
+@media (min-width: 1680px) {
+
+
+
+}
+
+@media (min-width: 1920px) {
+
+
+
 }

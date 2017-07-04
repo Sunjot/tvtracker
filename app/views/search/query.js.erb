@@ -42,8 +42,8 @@ $.ajax(dbRequest).done(function (response) {
 
     // append the poster
     $(row).append(" \
-      <div class='poster'> \
-        <img src='" + posterURL + "' width='150'> \
+      <div class='query-poster'> \
+        <img src='" + posterURL + "'> \
       </div> \
     ")
 
@@ -56,7 +56,7 @@ $.ajax(dbRequest).done(function (response) {
     // append the name and description (only up to 450 characters to prevent large descriptions)
     $(row).append(' \
       <div class="show-desc results text-left"> \
-        <h2 class="show-name">' + value["name"] + '</h2> \
+        <p class="show-name">' + value["name"] + '</p> \
         <div class="show_but"> \
           <div class="add_but"> \
             <%= button_to "Add", add_path, remote: true, class: "add_show btn btn-success btn-sm", "data-toggle": "modal", "data-target": "#insertConf" %> \
@@ -65,7 +65,7 @@ $.ajax(dbRequest).done(function (response) {
             <%= button_to "More Info", add_path, remote: true, class: "more_info btn btn-success btn-sm" %> \
           </div> \
         </div> \
-        <h5>' + desc_upd + '</h5> \
+        <p>' + desc_upd + '</p> \
       </div> \
     ')
 

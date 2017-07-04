@@ -20,9 +20,9 @@
   flex-direction: row;
   overflow: hidden;
   width: 200%;
-  transition: margin-left 1.5s;
-  -webkit-transition: margin-left 1.5s;
-  -moz-transition: margin-left 1.5s;
+  transition: margin-left 0.75s;
+  -webkit-transition: margin-left 0.75s;
+  -moz-transition: margin-left 0.75s;
 }
 
 .title-container {
@@ -109,14 +109,6 @@
 .poster {
   width: 170px;
   transition: width 0.8s;
-}
-
-.slide-out {
-  width: 0px;
-}
-
-.disappear {
-  opacity: 0;
 }
 
 .show_list {
