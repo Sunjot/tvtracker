@@ -39,14 +39,14 @@ $('.button_to').off('ajax:success').on('ajax:success', function() {
         '<div class="show-pic"> \
           <img src="https://image.tmdb.org/t/p/w185' + response["poster_path"] + '"></img> \
         </div> \
-        <div class="show-desc"> \
+        <div class="show-desc-cont"> \
           <div class="show-header"> \
             <h3 class="modal-title">' + response["name"] + '</h3> \
             <h4 class="show-date">(' + date + ') </h4> \
           </div> \
           <span class="show-genres">' + genre_list + '</span>\
           <hr class="top-line"></hr> \
-          <span class="show-desc">' + response["overview"] + '</span>\
+          <span class="modal-show-desc">' + response["overview"] + '</span>\
         </div>'
       );
     }

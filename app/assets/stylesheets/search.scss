@@ -79,7 +79,7 @@
   flex-direction: row;
   justify-content: flex-start;
   padding-top: 2px;
-  padding-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 .add_but {
@@ -149,7 +149,7 @@
 
   .add_show, .more_info {
     height: 32px;
-    padding: 5px 10px;
+    padding: 5px 10px !important;
   }
 
 }

@@ -92,6 +92,7 @@
   position:relative;
   display:inline-block;
   margin: 5px;
+  transition: opacity 0.5s;
 }
 
 .btn.info, .btn.remove {

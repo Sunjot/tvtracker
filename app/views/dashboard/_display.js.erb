@@ -1,9 +1,4 @@
 
-// prevents caching so results dont load over previously displayed results
-document.addEventListener("turbolinks:before-cache", function() {
-  $(".all_shows").empty()
-})
-
 posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
 
 <% @showIDs.each do |obj| %> // go through each show, hit tmdb api to fetch json, then display data
@@ -34,29 +29,3 @@ posterBaseUrl = "https://image.tmdb.org/t/p/w185" // base URL for each poster
   });
 
 <% end %>
-
-// TODO: if on mobile device, then
-  /* document.getElementById("post-cont-deleg").addEventListener("click", function(e){
-
-    if (e.target && e.target.className == "poster") {
-      var div = document.createElement('div');
-      div.className += " full-box";
-      e.target.parentElement.insertBefore(div, e.target);
-    }
-  }); */
-
-document.getElementById("sched-click").addEventListener(("click"), function(e){
-
-  document.getElementsByClassName("tab-container")[0].style.marginLeft = "-100%";
-  document.getElementById("slide-hr").style.marginLeft = "55%";
-  document.getElementById("slide-hr").style.width = "45%";
-
-});
-
-document.getElementById("coll-click").addEventListener(("click"), function(e){
-
-  document.getElementsByClassName("tab-container")[0].style.marginLeft = "0%";
-  document.getElementById("slide-hr").style.marginLeft = "0%";
-  document.getElementById("slide-hr").style.width = "48%";
-
-});
