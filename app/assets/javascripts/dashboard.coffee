@@ -4,10 +4,9 @@
 
 $(document).on 'ready turbolinks:load', ->
 
-  # prevents caching so results dont load over previously displayed results
-  document.addEventListener "turbolinks:before-cache", () =>
-    $(".all_shows").empty()
-
+  #
+  #
+  # TAB SECTION
   if document.getElementById("sched-click")? # check if it exists first
     document.getElementById("sched-click").addEventListener "click", (e) =>
       document.getElementsByClassName("tab-container")[0].style.marginLeft = "-100%" # for the actual content
@@ -20,17 +19,79 @@ $(document).on 'ready turbolinks:load', ->
       document.getElementById("slide-hr").style.marginLeft = "0%";
       document.getElementById("slide-hr").style.width = "48%";
 
+  #
+  #
+  # BUTTON SECTION
   $(document).off('ajax:success', '.button_to').on 'ajax:success', '.button_to', (e) =>
 
-    id = e["currentTarget"].parentElement.className.split(" ")[1] # get show id of show removed
+    # either 'remove' or 'info' based on which button is clicked
+    button_class_name = e["currentTarget"].getElementsByClassName('btn')[0].className.split(" ")[0]
+    id = e["currentTarget"].parentElement.className.split(" ")[1] # get show id
 
-    $.ajax # take the id of the show and hit the remove action to delete from the db
-      type: 'post'
-      url: '/remove'
-      data: { shID: id }
+    #
+    # if remove button is clicked
+    if button_class_name == "remove"
 
-    e["currentTarget"].parentElement.style.opacity = "0" # fade out before removing from page
+      $.ajax # take the id of the show and hit the remove action to delete from the db
+        type: 'post'
+        url: '/remove'
+        data: { shID: id }
 
-    setTimeout -> # fadeout takes 0.5s, and then we remove from page after 0.6s
-      e["currentTarget"].parentElement.remove();
-    , 600
+      e["currentTarget"].parentElement.style.opacity = "0" # fade out before removing from page
+
+      setTimeout -> # fadeout takes 0.5s, and then we remove from page after 0.6s
+        e["currentTarget"].parentElement.remove();
+      , 600
+
+    #
+    # if info button is clicked
+    if button_class_name == "info"
+      myUrl = "";
+      myUrl = "https://api.themoviedb.org/3/tv/" + id + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
+
+      tvInfoRequest = {
+        "async": true,
+        "crossDomain": true,
+        "url": myUrl,
+        "method": "GET"
+      }
+
+      # ajax request to get data about the tv show clicked on
+      $.ajax(tvInfoRequest).done (response) ->
+        if response["name"] != null
+          genre_list = "";
+          slash = 0;
+
+          # go through each genre and list them seperated by a slash
+          response["genres"].forEach (item) ->
+            if (slash == 0)
+              genre_list = genre_list + item.name;
+              slash = 1;
+            else
+              genre_list = genre_list + "/" + item.name;
+
+          # pull out the year from the date
+          date = response["first_air_date"].split("-")[0];
+
+          # insert show data into modal
+          $(".show-info").html ->
+            '<div class="show-pic"> \
+              <img src="https://image.tmdb.org/t/p/w185' + response["poster_path"] + '"></img> \
+            </div> \
+            <div class="show-desc-cont"> \
+              <div class="show-header"> \
+                <h3 class="modal-title">' + response["name"] + '</h3> \
+                <h4 class="show-date">(' + date + ') </h4> \
+              </div> \
+              <span class="show-genres">' + genre_list + '</span>\
+              <hr class="top-line"></hr> \
+              <span class="modal-show-desc">' + response["overview"] + '</span>\
+            </div>'
+
+  #
+  #
+  # OTHER JS
+
+  # prevents caching so results dont load over previously displayed results
+  document.addEventListener "turbolinks:before-cache", () =>
+    $(".all_shows").empty()
