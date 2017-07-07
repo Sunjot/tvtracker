@@ -7,7 +7,7 @@ document.addEventListener("turbolinks:before-cache", function() {
 })
 
 tvID = 1;
-myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502&query=" + "<%= @query %>";
+myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=<%= Figaro.env.TMDB_KEY %>&query=" + "<%= @query %>";
 posterBaseUrl = "https://image.tmdb.org/t/p/w342" // base URL for each poster
 
 // Ajax request to themoviedb to get list of tv shows
