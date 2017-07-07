@@ -49,12 +49,7 @@ $(document).on 'ready turbolinks:load', ->
       myUrl = "";
       myUrl = "https://api.themoviedb.org/3/tv/" + id + "?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502"
 
-      tvInfoRequest = {
-        "async": true,
-        "crossDomain": true,
-        "url": myUrl,
-        "method": "GET"
-      }
+      tvInfoRequest = { "async": true, "crossDomain": true, "url": myUrl, "method": "GET" }
 
       # ajax request to get data about the tv show clicked on
       $.ajax(tvInfoRequest).done (response) ->
