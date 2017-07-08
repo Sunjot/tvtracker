@@ -22,7 +22,10 @@ $(document).on 'ready turbolinks:load', ->
   #
   #
   # BUTTON SECTION
-  $(document).off('ajax:success', '.button_to').on 'ajax:success', '.button_to', (e) =>
+  # Couldn't just use .button_to for the selector because the search controller also has an
+  # ajax success method. The distinction prevents the two from interfering and causing issues on button clicks
+  # NOTE: .off and .on are both included because it causes double execution otherwise (not solved yet)
+  $(document).off('ajax:success', '.poster-container > .button_to').on 'ajax:success', '.poster-container > .button_to', (e) =>
 
     # either 'remove' or 'info' based on which button is clicked
     button_class_name = e["currentTarget"].getElementsByClassName('btn')[0].className.split(" ")[0]
@@ -86,7 +89,6 @@ $(document).on 'ready turbolinks:load', ->
   #
   #
   # OTHER JS
-
   # prevents caching so results dont load over previously displayed results
   document.addEventListener "turbolinks:before-cache", () =>
     $(".all_shows").empty()

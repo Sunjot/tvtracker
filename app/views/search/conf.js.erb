@@ -1,4 +1,0 @@
-
-// replaces default partial rendering code with this, which is the same but has the updated
-// show name from the controller action, which then gets passed to the partial 'show_added_modal'
-$(".add-conf").html("<%= escape_javascript(render partial: 'show_added_modal', locals: { show_name: @showName } ) %>");

@@ -7,14 +7,13 @@ class SearchController < ApplicationController
 
     # if the show doesn't already exist in the db, add and then create relation
     if Show.where(shid: params[:shID]).present? == false
-      aShow = Show.new(shid: params[:shID])
+      aShow = Show.new(shid: params[:shID], poster: params[:shPoster])
       aShow.save
-      puts aShow.shid
 
       cUser = current_user
       cUser.shows << aShow
       cUser.save
-      
+
     # if the show exists already in the db, check if it has a relation
     # with the user, and create the relation if not
     else
@@ -26,8 +25,6 @@ class SearchController < ApplicationController
         cUser.save
       end
     end
-
-    puts current_user.show_ids
 
     if params[:shName].present? # when ajax request contains show name
       @showName = params[:shName]

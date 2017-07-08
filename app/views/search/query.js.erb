@@ -1,11 +1,4 @@
 
-// Reset the search results to display nothing before the search page gets cached
-// This way when we revisit it doesn't restore previous results
-document.addEventListener("turbolinks:before-cache", function() {
-  $(".search_results").empty()
-  $(".search_form").val('') // clear text in the input form
-})
-
 tvID = 1;
 myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=<%= Figaro.env.TMDB_KEY %>&query=" + "<%= @query %>";
 posterBaseUrl = "https://image.tmdb.org/t/p/w342" // base URL for each poster
