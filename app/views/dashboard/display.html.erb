@@ -22,11 +22,15 @@
               <h4>No shows! Add some by clicking here.</h4>
             <% elsif @showCount > 1 %>
               <div id="post-cont-deleg" class="show_list">
-
+                <!-- for each show connected to the current user -->
+                <% @showInfo.each do |obj| %>
+                  <div class="poster-container <%= obj.shid %>">
+                    <img class="poster" src="<%= obj.poster %>"></img>
+                    <%= button_to "Info", info_path, remote: true, class: "info btn btn-outline-success btn-sm", "data-toggle": "modal", "data-target": "#showModal"%>
+                    <%= button_to "Remove", remove_path, remote: true, class: "remove btn btn-outline-success btn-sm" %>
+                  </div>
+                <% end %>
               </div>
-              <script type="text/javascript">
-                <%= render partial: 'display.js'%>
-              </script>
             <% end %>
           </div>
         </div>

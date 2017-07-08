@@ -19,10 +19,10 @@ class DashboardController < ApplicationController
     @showCount = current_user.show_ids.count
     @index = current_user.show_ids
 
-    @showIDs = []
+    @showInfo = []
     @index.each do |i|
-      if Show.select(:shid).find(i).present?
-        @showIDs << Show.select(:shid).find(i)
+      unless Show.select(:shid).find(i).shid.nil?
+        @showInfo << Show.select("shid, poster").find(i)
       end
     end
 
