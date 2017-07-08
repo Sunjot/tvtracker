@@ -88,7 +88,30 @@ $(document).on 'ready turbolinks:load', ->
 
   #
   #
+  # SHOW SCHEDULES
+
+
+
+  #
+  #
+  # SCHED DATES
+  # inserts the dates for the coming week into the schedule container
+  if document.getElementsByClassName("day-cont")[0]?
+    document.getElementById("day-three-date").innerHTML = moment().add(2, 'days').format('MMMM DD');
+    document.getElementById("day-four-date").innerHTML = moment().add(3, 'days').format('MMMM DD');
+    document.getElementById("day-five-date").innerHTML = moment().add(4, 'days').format('MMMM DD');
+    document.getElementById("day-six-date").innerHTML = moment().add(5, 'days').format('MMMM DD');
+    document.getElementById("day-seven-date").innerHTML = moment().add(6, 'days').format('MMMM DD');
+
+  #
+  #
   # OTHER JS
   # prevents caching so results dont load over previously displayed results
   document.addEventListener "turbolinks:before-cache", () =>
     $(".all_shows").empty()
+
+    # resets to the collection tab when leaving the page
+    if document.getElementsByClassName("tab-container")[0]?
+      document.getElementsByClassName("tab-container")[0].style.marginLeft = "0%";
+      document.getElementById("slide-hr").style.marginLeft = "0%";
+      document.getElementById("slide-hr").style.width = "48%";

@@ -26,7 +26,7 @@ $(document).on 'ready turbolinks:load', ->
       poster = name_element.parentElement.previousElementSibling.firstElementChild.src; # show poster
 
       $.ajax # send ajax request to server with relevant info to store in db
-        type: "post"
+        method: "POST"
         url: "/add"
         data: {shName: name, shID: id, shPoster: poster}
 

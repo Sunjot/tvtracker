@@ -26,19 +26,6 @@ class SearchController < ApplicationController
       end
     end
 
-    if params[:shName].present? # when ajax request contains show name
-      @showName = params[:shName]
-
-      respond_to do |format|
-        format.js { render action: "conf" } # execute conf.js.erb to render partial
-      end
-
-    else # clicking the add button
-      respond_to do |format|
-        format.js
-      end
-    end
-
   end
 
   # For when a user searches for a show

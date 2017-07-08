@@ -1,0 +1,43 @@
+<% @showInfo.each do |obj| %>
+
+  var url = "https://api.themoviedb.org/3/tv/<%= obj.shid %>?language=en-US&api_key=9316c21a1d598842bf35b43bf3e3c502";
+  var tvInfoRequest = {"async": true, "crossDomain": true, "url": url, "method": "GET" };
+
+  $.ajax(tvInfoRequest).done(function(response){
+    var show = moment(response["last_air_date"], "YYYY-MM-DD");
+    var current = moment().format('YYYY-MM-DD');
+
+    if (show.isBetween(moment().format('YYYY-MM-DD'), moment().add(7, 'days').format('YYYY-MM-DD'))){
+
+      var append_info = "\
+        <div class='show-item'> \
+          <div class='sched-poster'><img src='<%= obj.poster %>'></img></div> \
+          <div>" + response["name"] + "</div> \
+        </div>"
+
+      if (show.isSame(moment().format('YYYY-MM-DD'))) {
+        $("#day-one-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(1, 'days').format('YYYY-MM-DD'))) {
+        $("#day-two-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(2, 'days').format('YYYY-MM-DD'))) {
+        $("#day-three-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(3, 'days').format('YYYY-MM-DD'))) {
+        $("#day-four-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(4, 'days').format('YYYY-MM-DD'))) {
+        $("#day-five-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(5, 'days').format('YYYY-MM-DD'))) {
+        $("#day-six-shows").append(append_info);
+      }
+      if (show.isSame(moment().add(6, 'days').format('YYYY-MM-DD'))) {
+        $("#day-seven-shows").append(append_info);
+      }
+    }
+
+  });
+
+<% end %>

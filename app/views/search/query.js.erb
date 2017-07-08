@@ -4,14 +4,7 @@ myUrl = "https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=<%
 posterBaseUrl = "https://image.tmdb.org/t/p/w342" // base URL for each poster
 
 // Ajax request to themoviedb to get list of tv shows
-var dbRequest = {
-  "async": true,
-  "crossDomain": true,
-  "url": myUrl,
-  "method": "GET",
-  "headers": {},
-  "data": "{}"
-}
+var dbRequest = { "async": true, "crossDomain": true, "url": myUrl, "method": "GET" }
 
 // collects response from moviedb and we can do whatever with the data in here
 $.ajax(dbRequest).done(function (response) {
