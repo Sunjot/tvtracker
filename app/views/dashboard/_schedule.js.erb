@@ -26,32 +26,27 @@
             <div class='show-item'> \
               <div class='sched-poster'><img src='<%= obj.poster %>'></img></div> \
               <div class='ep-container'> \
-                <div>" + response["name"] + "</div> \
+                <div class='show-item-name'>" + response["name"] + "</div> \
                 <div class='ep-name'>" + ep["name"] + "</div> \
               </div> \
             </div>"
 
           if(between) { // find out which day of the week the show airs and append data
-            if (show.isSame(moment().format('YYYY-MM-DD'))) {
-              $("#day-one-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(1, 'days').format('YYYY-MM-DD'))) {
-              $("#day-two-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(2, 'days').format('YYYY-MM-DD'))) {
-              $("#day-three-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(3, 'days').format('YYYY-MM-DD'))) {
-              $("#day-four-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(4, 'days').format('YYYY-MM-DD'))) {
-              $("#day-five-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(5, 'days').format('YYYY-MM-DD'))) {
-              $("#day-six-shows").append(append_info);
-            }
-            if (show.isSame(moment().add(6, 'days').format('YYYY-MM-DD'))) {
-              $("#day-seven-shows").append(append_info);
+
+            // looping 7 times because 7 days - for each day, check if the show date matches and append if so
+            for (let i = 0; i < 7; i++) {
+              if (show.isSame(moment().add(i, 'days').format('YYYY-MM-DD'))) {
+                let day_show = 'day-' + (i+1) + '-shows';
+                let day_show_selector = '#' + day_show;
+                let day_cont = 'day-' + (i+1) + '-cont';
+
+                document.getElementById(day_cont).style.display = 'inline';
+
+                $(day_show_selector).append(append_info);
+                if (document.getElementById(day_show).childElementCount > 1){
+                  document.getElementById(day_show).lastChild.style.borderTop = "1px solid white";
+                }
+              }
             }
           }
         });

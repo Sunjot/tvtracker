@@ -90,18 +90,15 @@ $(document).on 'ready turbolinks:load', ->
   #
   # SHOW SCHEDULES
 
-
-
   #
   #
   # SCHED DATES
   # inserts the dates for the coming week into the schedule container
   if document.getElementsByClassName("day-cont")[0]?
-    document.getElementById("day-three-date").innerHTML = moment().add(2, 'days').format('MMMM DD');
-    document.getElementById("day-four-date").innerHTML = moment().add(3, 'days').format('MMMM DD');
-    document.getElementById("day-five-date").innerHTML = moment().add(4, 'days').format('MMMM DD');
-    document.getElementById("day-six-date").innerHTML = moment().add(5, 'days').format('MMMM DD');
-    document.getElementById("day-seven-date").innerHTML = moment().add(6, 'days').format('MMMM DD');
+    for i in [2..6] # for days 3 through 7 of the week, get the date and insert
+      day_selector = 'day-' + (i+1) + '-date';
+      console.log(day_selector)
+      document.getElementById(day_selector).innerHTML = moment().add(i, 'days').format('MMMM DD');
 
   #
   #

@@ -215,32 +215,35 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 450px;
-  border: 1px solid white;
+  width: 500px;
   margin: 25px 0 25px 0;
+  font-family: 'Raleway';
 }
 
 .day-cont {
   width: 100%;
+  display: none;
 }
 
 .day-dates {
   width: 100%;
-  background-color: #ccced1;
   font-weight: bold;
-  font-size: 14px;
-  color: #272828;
+  font-size: 28px;
+  color: #eaeaea;
+  text-align: left;
+  border-bottom: 2px solid white;
+  padding: 3px;
+  margin-bottom: 3px;
 }
 
 .day-shows {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #e6e6e6;
   min-height: 50px;
   font-weight: bold;
   font-size: 14px;
-  color: black;
+  color: #eaeaea;
 }
 
 .show-item {
@@ -248,8 +251,8 @@
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  padding: 5px;
-  border-bottom: 1px solid white;
+  padding: 10px;
+  //border-bottom: 1px solid white;
 }
 
 .ep-container {
@@ -257,13 +260,18 @@
   flex-direction: column;
   align-items: flex-start;
 
+  > .show-item-name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
   > .ep-name {
     font-weight: normal;
   }
 }
 
 .sched-poster {
-  width: 60px;
+  width: 90px;
   padding-right: 10px;
 
   > img {
@@ -343,7 +351,7 @@
   }
 
   .sched-container {
-    width: 420px;
+    width: 440px;
   }
 
 }
@@ -371,7 +379,7 @@
   }
 
   .sched-container {
-    width: 450px;
+    width: 500px;
   }
 
 }
