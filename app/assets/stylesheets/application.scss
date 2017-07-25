@@ -97,7 +97,7 @@ body {
 .logo {
   padding-top: 10px;
   padding-left: 10px;
-  width: 42px;
+  padding-bottom: 10px;
   height: auto;
 }
 
@@ -132,12 +132,17 @@ footer {
   align-items: flex-start;
 }
 
+svg.feather {
+  width: 26px;
+  height: 26px;
+}
+
 .header-links {
   font-size: 1.4rem;
   margin-top: 0px;
   font-family: 'Open Sans Condensed';
   padding-top: 10px;
-  padding-right: 50px;
+  padding-right: 20px;
   color: #eaeaea;
 }
 
@@ -175,6 +180,10 @@ a:link {
   .header { // increase navbar height as width increases
     height: 40px;
   }
+  svg.feather {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -183,10 +192,14 @@ a:link {
     font-size: 80%;
   }
   .logo {
-    width: 37px;
+    width: 35px;
   }
   .header {
     height: 50px;
+  }
+  svg.feather {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -196,10 +209,14 @@ a:link {
     font-size: 100%;
   }
   .logo {
-    width: 42px;
+    width: 38px;
   }
   .header {
     height: 60px;
+  }
+  svg.feather {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -214,6 +231,10 @@ a:link {
   .header {
     height: 65px;
   }
+  svg.feather {
+    width: 28px;
+    height: 28px;
+  }
 }
 
 @media (min-width: 1920px) {
@@ -226,6 +247,10 @@ a:link {
   }
   .header {
     height: 70px;
+  }
+  svg.feather {
+    width: 30px;
+    height: 30px;
   }
 
 }

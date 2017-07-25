@@ -3,6 +3,7 @@
   <head>
     <title>TvTracker</title>
     <link rel="icon" href="<%= asset_path('favicon.ico')%>" />
+    <script src="https://unpkg.com/feather-icons"></script>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -30,11 +31,11 @@
 
           <div class="side-links">
             <%= link_to about_path, class: 'header-links' do %>
-              <p>My Account</p>
+              <i data-feather="settings"></i>
             <% end %>
 
             <%= link_to destroy_user_session_path, method: :delete, class: 'header-links' do %>
-              <p class="log-out-link">Log out</p>
+              <i data-feather="log-out"></i>
             <% end %>
           </div>
         </div>
@@ -60,5 +61,8 @@
     <% end %>
 
     <%= yield %>
+    <script>
+      feather.replace()
+    </script>
   </body>
 </html>
