@@ -1,5 +1,8 @@
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database: tv_production
+  username: rails
+  password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>
 
 development:
   adapter: postgresql
