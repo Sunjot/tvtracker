@@ -15,6 +15,7 @@ if ENV['OUR_ENV'] == "development"
 else # for when on the ububtu server
   port        ENV.fetch("PORT") { 80 }
   environment ENV.fetch("RAILS_ENV") { "production" }
+  bind "unix:///home/rails/tvtracker/tmp/sockets/tvtracker.sock" # path set for ubuntu server
 end
 
 # Specifies the number of `workers` to boot in clustered mode.
