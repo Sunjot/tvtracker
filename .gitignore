@@ -22,3 +22,8 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore public assets, precompile on server as necessary
+/public/assets/*
+
+**/.DS_Store
