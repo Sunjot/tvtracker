@@ -7,16 +7,15 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
-# Specifies the `port` that Puma will listen on to receive requests, default is 3000.
-#
-port        ENV.fetch("PORT") { 80 }
-
-# Specifies the `environment` that Puma will run in.
-#
-environment ENV.fetch("RAILS_ENV") { "production" }
-
-# Path set for ubuntu droplet [production]
-bind "unix:///home/rails/tvtracker/tmp/sockets/tvtracker.sock"
+# our_env is set in the application.yml file accordingly - either dev or prod depending on environment
+# since application.yml is unique on both the dev and prod servers, we can utilize that to set the port/env
+if ENV['OUR_ENV'] == "development"
+  port        ENV.fetch("PORT") { 3005 }
+  environment ENV.fetch("RAILS_ENV") { "development" }
+else # for when on the ububtu server
+  port        ENV.fetch("PORT") { 80 }
+  environment ENV.fetch("RAILS_ENV") { "production" }
+end
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
