@@ -15,6 +15,7 @@ port        ENV.fetch("PORT") { 80 }
 #
 environment ENV.fetch("RAILS_ENV") { "production" }
 
+# Path set for ubuntu droplet [production]
 bind "unix:///home/rails/tvtracker/tmp/sockets/tvtracker.sock"
 
 # Specifies the number of `workers` to boot in clustered mode.
