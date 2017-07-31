@@ -9,13 +9,9 @@ development:
   database: tv_development
   pool: 5
   timeout: 5000
-  username: rails
-  password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>
 
 test:
   adapter: postgresql
   database: tv_test
   pool: 5
   timeout: 5000
-  username: rails
-  password: <%= ENV['RAILS_DATABASE_PASSWORD'] %>
