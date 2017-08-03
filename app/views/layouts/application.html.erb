@@ -30,6 +30,18 @@
             <div><img class="logo" src="<%= asset_path('logo.png')%>"></img></div>
           <% end %>
 
+          <div class="middle-links">
+            <%= link_to search_path do %>
+              <p>Search</p>
+            <% end %>
+
+            <div id="vertical"></div>
+
+            <%= link_to stats_path do %>
+              <p>Statistics</p>
+            <% end %>
+          </div>
+
           <div class="side-links">
             <%= link_to about_path, class: 'header-links' do %>
               <i data-feather="settings"></i>

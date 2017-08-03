@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'search', to: 'search#query'
   post 'search', to: 'search#query'
 
+  get 'stats', to: 'stats#visuals'
+
   # Get and post requests for users
   devise_for :users
 

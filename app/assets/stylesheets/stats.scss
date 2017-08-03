@@ -1,0 +1,16 @@
+// Place all the styles related to the stats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#coming-soon-msg {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 50px;
+
+  p {
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.5rem;
+    color: white;
+  }
+}

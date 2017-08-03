@@ -19,7 +19,10 @@
         <div class="coll-tab">
           <div class="all_shows">
             <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
-              <h4>No shows! Add some by clicking here.</h4>
+              <div id="empty-msg">
+                <p>You haven't added any shows to your collection yet!
+                  You can do so by clicking <%= link_to "/search" do %>here.<% end %></p>
+              </div>
             <% elsif @showCount > 1 %>
               <div id="post-cont-deleg" class="show_list">
                 <!-- for each show connected to the current user -->

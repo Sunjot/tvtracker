@@ -193,8 +193,8 @@
   }
 
   .home_but {
-    padding: 2px 4px !important;
-    font-size: 10px !important;
+    padding: 1px 3px !important;
+    font-size: 8px !important;
   }
 
   .section-container {
@@ -267,6 +267,11 @@
   .container { // ensures the container doesn't stretch to fill viewport
     max-width: 200px;
     min-width: 200px;
+  }
+
+  .home_but {
+    padding: 6px 12px !important;
+    font-size: 20px !important;
   }
 }
 
