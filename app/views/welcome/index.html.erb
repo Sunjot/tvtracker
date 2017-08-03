@@ -15,34 +15,58 @@
             <%= link_to "Log In", new_user_session_path, class: "btn btn-warning home_but right"%>
           </div>
         </div>
+        <div id="sec-one" class="section-container">
+          <div>
+            <p id="title">Collections</p>
+            <p id="info">
+              The collection tab makes it easy to view the entire group of shows that you're
+              keeping track of in a neat grid form.
+            </p>
+          </div>
+          <div>
+            <img class="collection-img" src="<%= asset_path('collection-img.png') %>"/>
+          </div>
+        </div>
+        <div id="sec-two" class="section-container">
+          <div>
+            <img class="sched-img" src="<%= asset_path('sched-img.png') %>"/>
+          </div>
+          <div>
+            <p id="title">What's on?</p>
+            <p id="info">
+              If you want to know what's airing this week, not to worry! The schedule tab ensures that
+              you don't forget about that new season premiere.
+            </p>
+          </div>
+        </div>
       </div>
     <% else %>
       <div class="main-content welcome text-center">
         <p class="text-center dash">Where would you like to go?</p><br />
-          <div class="boxes">
-            <div class="container">
-                <%= link_to "/search" do %>
-                  <div class="jumbotron">
-                    <p>Search</p>
-                  </div>
-                <% end %>
-            </div>
-            <div class="container">
-              <%= link_to "/dashboard" do %>
+        <div class="boxes">
+          <div class="container">
+              <%= link_to "/search" do %>
                 <div class="jumbotron">
-                  <p>Dashboard</p>
+                  <p>Search</p>
                 </div>
               <% end %>
-            </div>
-            <div class="container">
-              <%= link_to "/" do %>
-                <div class="jumbotron">
-                  <p>Fancy Stats</p>
-                </div>
-              <% end %>
-            </div>
+          </div>
+          <div class="container">
+            <%= link_to "/dashboard" do %>
+              <div class="jumbotron">
+                <p>Dashboard</p>
+              </div>
+            <% end %>
+          </div>
+          <div class="container">
+            <%= link_to "/" do %>
+              <div class="jumbotron">
+                <p>Fancy Stats (soon)</p>
+              </div>
+            <% end %>
           </div>
         </div>
-      <% end %>
+      </div>
+    <% end %>
   </body>
 </html>

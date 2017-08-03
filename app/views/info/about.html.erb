@@ -5,12 +5,44 @@
   </head>
   <body>
     <div class="main-content about-cont text-center">
-      <div class="general">
-        <h2>General Info</h2>
+
+      <p class="header">About Me</p>
+      <div class="desc">
+        <p>
+          TvTracker allows you to build a collection of all your favorite TV shows. It might be something
+          you finished watching 3 years ago or maybe a show you started last week. TvTracker will collect
+          them all and display them for you in a grid. If any of those shows just happen to be airing on
+          TV at the time or in the near future (currently just 1 week ahead), they'll be added to the
+          schedule tab so you can keep track of when they'll be on your television screen.
+        </p>
       </div>
-      <div class="attribs">
-        <h2>Attributions</h2>
-        <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+      <p class="header">FAQ</p>
+      <div class="desc">
+        <p class="subheader">Where are you gathering all the show information?</p>
+        <p>
+          The beautiful people over at TMDb have been kind enough to provide an API that
+          powers a large chunk of this application. Wouldn't be possible without them, so
+          make sure to check 'em out. This product uses the TMDb API but is not endorsed or certified by TMDb.<br/><br/>
+          <a href="https://www.themoviedb.org"><img id="tmdb-logo" src="<%= asset_path('tmdb.png') %>"/></a><br/><br />
+        </p>
+        <p class="subheader">Is this open-source?</p>
+        <p>
+          If you'd like to have a look at the code, you can so <a href="https://github.com/Sunjot/tvtracker">here</a>.
+          However, it requires a bit of a setup to run locally (due to various secret keys and such) that I haven't got to
+          try out yet. If you'd like to tackle that yourself, be my guest. I do plan to get to that eventually
+          and I'll drop an update on here when that is.
+        </p>
+        <p class="subheader"></p>
+      </div>
+
+      <p class="header">Attributions</p>
+      <div class="desc">
+        <p>
+          Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+          <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> are licensed by
+          <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+        </p>
       </div>
     </div>
   </body>
