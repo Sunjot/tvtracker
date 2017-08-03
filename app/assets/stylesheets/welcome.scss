@@ -155,7 +155,7 @@
 
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
 
-@media (min-width: 400px) {
+@media (min-width: 300px) {
 
   .boxes { // when we're at tablet/phone sizes we change flex to display boxes vertically
     flex-direction: column;
@@ -218,6 +218,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
+  }
+
+  .container { // ensures the container doesn't stretch to fill viewport
+    max-width: 200px;
+    min-width: 200px;
   }
 
   .bg-overlay {

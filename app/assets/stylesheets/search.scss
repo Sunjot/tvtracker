@@ -104,10 +104,10 @@
 
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN  */
 
-@media (min-width: 400px) {
+@media (min-width: 300px) {
 
   .input-group {
-    width: 350px;
+    width: 290px;
   }
 
   .query-poster > img {
@@ -115,7 +115,11 @@
   }
 
   .show.row {
-    width: 400px;
+    width: 300px;
+  }
+
+  .show-desc {
+    padding-left: 10px;
   }
 
   .show-desc p {
@@ -141,6 +145,10 @@
 
   .show.row {
     width: 600px;
+  }
+
+  .show-desc {
+    padding-left: 0px;
   }
 
   .show-desc p {
