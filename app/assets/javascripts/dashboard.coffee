@@ -97,7 +97,6 @@ $(document).on 'ready turbolinks:load', ->
   if document.getElementsByClassName("day-cont")[0]?
     for i in [2..6] # for days 3 through 7 of the week, get the date and insert
       day_selector = 'day-' + (i+1) + '-date';
-      console.log(day_selector)
       document.getElementById(day_selector).innerHTML = moment().add(i, 'days').format('MMMM DD');
 
   #
