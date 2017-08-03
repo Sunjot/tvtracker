@@ -4,13 +4,20 @@
     <title>TV Tracker - Home</title>
   </head>
   <body>
-    <div class="main-content welcome text-center">
-      <% if user_signed_in? == false %>
-        <h1 class="text-center title">TV Tracker</h1>
-        <h5>Keep tabs on all your favorite shows and never forget to catch the latest episodes!</h5>
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning home_but"%>
-        <%= link_to "Log In", new_user_session_path, class: "btn btn-warning home_but right"%>
-      <% else %>
+    <% if user_signed_in? == false %>
+      <div class="main-content bg-splash text-center">
+        <div class="bg-container">
+          <img class="bg-image" src="<%= asset_path('tvtrack_bg10.jpg') %>"/>
+          <div class="bg-overlay">
+            <p class="text-center title">TV Tracker</p>
+            <p>Keep tabs on all your favorite shows!</p>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning home_but"%>
+            <%= link_to "Log In", new_user_session_path, class: "btn btn-warning home_but right"%>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="main-content welcome text-center">
         <p class="text-center dash">Where would you like to go?</p><br />
           <div class="boxes">
             <div class="container">
@@ -35,7 +42,7 @@
               <% end %>
             </div>
           </div>
+        </div>
       <% end %>
-    </div>
   </body>
 </html>
