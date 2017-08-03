@@ -141,7 +141,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
+  width: 220px;
 
   #vertical {
     border-left: 1px solid white;
@@ -224,7 +224,7 @@ a:link {
     height: 22px;
   }
   .middle-links {
-    width: 130px;
+    width: 180px;
   }
 }
 
@@ -244,7 +244,7 @@ a:link {
     height: 24px;
   }
   .middle-links {
-    width: 170px;
+    width: 220px;
   }
 }
 
@@ -263,6 +263,9 @@ a:link {
     width: 26px;
     height: 26px;
   }
+  .middle-links {
+    width: 300px;
+  }
 }
 
 @media (min-width: 1680px) {
@@ -279,6 +282,9 @@ a:link {
   svg.feather {
     width: 28px;
     height: 28px;
+  }
+  .middle-links {
+    width: 320px;
   }
 }
 

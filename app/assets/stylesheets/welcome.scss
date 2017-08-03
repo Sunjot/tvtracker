@@ -5,9 +5,10 @@
 .welcome { // Puts the title "where to go" and 3-jumbotron container vertically and in the center
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 100%;
+  padding: 25px 0px 0px 25px;
 }
 
 .bg-splash {
@@ -92,10 +93,26 @@
   }
 }
 
-.dash {
-  font-family: 'Raleway';
+.heading {
+  font-family: "Quicksand", sans-serif;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+
+#popular {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .popular-show {
+    padding-right: 1%;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 .input-group {
@@ -110,69 +127,9 @@
   }
 }
 
-.show_search {
-  margin-top: 10px;
-}
-
-.placeholder {
-  font-style: italic;
-}
-
-.boxes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.boxes > .container {
-
-  margin-left: 0px;
-  margin-right: 0px;
-
-  > a:link { // removes underline when hovering over text link
-    text-decoration: none;
-  }
-}
-
-.jumbotron {
-  background-color: #f2f2f2;
-  padding: 0px;
-  height: 125px;
-  display: flex;
-  align-items: center; // horizontal align
-  justify-content: center; // vertical align
-  > p {
-    color: black;
-    margin-top: 0px;
-    margin-bottom: 5px !important; // was leaving 15px margin, so had to force change
-    font-family: 'Open Sans Condensed';
-  }
-}
-
-.jumbotron:hover {
-  background-color: #e6e6e6; // slightly darker
-}
-
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
 
 @media (min-width: 300px) {
-
-  .boxes { // when we're at tablet/phone sizes we change flex to display boxes vertically
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .jumbotron { // reduce size of the 3 jumbotrons
-    height: 100px;
-    padding-left: 3px !important; // prevents line breaks using p tag
-    padding-right: 3px !important;
-  }
-
-  .container { // ensures the container doesn't stretch to fill viewport
-    max-width: 150px;
-    min-width: 150px;
-  }
 
   .bg-overlay {
     position: absolute;
@@ -214,17 +171,6 @@
 
 @media (min-width: 768px) {
 
-  .boxes { // when we're at tablet/phone sizes we change flex to display boxes vertically
-    flex-direction: row;
-    justify-content: center;
-    align-items: baseline;
-  }
-
-  .container { // ensures the container doesn't stretch to fill viewport
-    max-width: 200px;
-    min-width: 200px;
-  }
-
   .bg-overlay {
     position: absolute;
     z-index: 10;
@@ -264,11 +210,6 @@
 
 @media (min-width: 1280px) {
 
-  .container { // ensures the container doesn't stretch to fill viewport
-    max-width: 200px;
-    min-width: 200px;
-  }
-
   .home_but {
     padding: 6px 12px !important;
     font-size: 20px !important;
@@ -277,24 +218,8 @@
 
 @media (min-width: 1680px) {
 
-  .jumbotron {
-    height: 115px;
-  }
-
-  .container { // ensures the container doesn't stretch to fill viewport
-    max-width: 225px;
-    min-width: 225px;
-  }
 }
 
 @media (min-width: 1920px) {
 
-  .jumbotron {
-    height: 125px;
-  }
-
-  .container { // ensures the container doesn't stretch to fill viewport
-    max-width: 250px;
-    min-width: 250px;
-  }
 }

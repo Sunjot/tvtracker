@@ -42,29 +42,9 @@
       </div>
     <% else %>
       <div class="main-content welcome text-center">
-        <p class="text-center dash">Where to?</p><br />
-        <div class="boxes">
-          <div class="container">
-              <%= link_to "/search" do %>
-                <div class="jumbotron">
-                  <p>Search</p>
-                </div>
-              <% end %>
-          </div>
-          <div class="container">
-            <%= link_to "/dashboard", :"data-turbolinks" => false do %>
-              <div class="jumbotron">
-                <p>Dashboard</p>
-              </div>
-            <% end %>
-          </div>
-          <div class="container">
-            <%= link_to "/" do %>
-              <div class="jumbotron">
-                <p>Fancy Stats (soon)</p>
-              </div>
-            <% end %>
-          </div>
+        <p class="heading">Popular TV Shows...</p><br />
+        <div id="popular">
+
         </div>
       </div>
     <% end %>
