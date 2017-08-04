@@ -206,6 +206,11 @@ a:link {
 }
 /* END */
 
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
 
 @media (min-width: 300px) {
