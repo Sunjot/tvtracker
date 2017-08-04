@@ -44,7 +44,16 @@
       <div class="main-content welcome text-center">
         <p class="heading">Popular TV Shows...</p><br />
         <div id="popular">
-
+          <% for i in 0..9 %>
+            <div class="popular-show">
+                <img />
+                <div id="text-cont">
+                  <p id="add-popular">Add</p>
+                </div>
+            </div>
+          <% end %>
+        </div>
+        <div id="added-msg-cont">
         </div>
       </div>
     <% end %>

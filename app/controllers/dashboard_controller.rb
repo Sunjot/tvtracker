@@ -26,6 +26,9 @@ class DashboardController < ApplicationController
       end
     end
 
+    # sort in ascending order by show id
+    @showInfo = @showInfo.sort_by {|obj| obj.shid}
+
     respond_to do |format|
       format.html
     end
