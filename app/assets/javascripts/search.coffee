@@ -30,8 +30,16 @@ $(document).on 'ready turbolinks:load', ->
         url: "/add"
         data: {shName: name, shID: id, shPoster: poster}
 
-      $(".add-conf").html ->
-        '<h4 class="modal-title">' + name + ' added to your collection! </h4>'
+      # animation for the confirmation message when a show is added
+      # adds p tag showing confirmation, then removes after animation is done
+      p_tag = document.createElement('p');
+      p_tag.className = "conf-add"
+      p_tag.innerHTML = "Show added!";
+      document.getElementById('added-msg-cont').appendChild(p_tag);
+      setTimeout =>
+        cont = document.getElementById('added-msg-cont');
+        cont.removeChild(cont.children[0])
+      , 3000
 
   #
   #
