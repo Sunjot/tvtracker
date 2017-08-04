@@ -42,17 +42,78 @@
       </div>
     <% else %>
       <div class="main-content welcome text-center">
-        <p class="heading">Popular TV Shows...</p><br />
-        <div id="popular">
-          <% for i in 0..9 %>
-            <div class="popular-show">
+
+        <!-- for popular shows -->
+        <p class="heading">Popular</p>
+        <div id="popular" class="home-subsections">
+          <% for i in 0..1 %>
+            <div class="main-display discover-item">
                 <img />
                 <div id="text-cont">
-                  <p id="add-popular">Add</p>
+                  <p id="add-show">Add</p>
+                </div>
+                <p id="sh-name"></p>
+            </div>
+          <% end %>
+          <% for i in 0..2 %>
+            <div class="small-display discover-item">
+                <img />
+                <div id="text-cont">
+                  <p id="add-show">Add</p>
                 </div>
             </div>
           <% end %>
         </div>
+
+        <!-- for suggested shows (only if the user has some in their collection) -->
+        <% if @selectedShow != nil %>
+          <div id="suggested" class="home-subsections">
+            <div id="randomized-cont">
+              <p class="heading">Since you enjoy...</p>
+              <div id="randomized">
+                <img src="<%= @selectedShow.poster %>" id="<%= @selectedShow.shid %>"/>
+              </div>
+            </div>
+            <div id="show-divider"></div>
+            <div id="suggested-cont">
+              <p class="heading">You might want to check out: </p>
+              <div id="suggested-list">
+                <% for i in 0..5 %>
+                  <div class="recco-display discover-item">
+                      <img />
+                      <div id="text-cont">
+                        <p id="add-show">Add</p>
+                      </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+        <!-- for shows currently airing -->
+        <% else %>
+          <p class="heading">Currently airing</p>
+          <div id="airing" class="home-subsections">
+            <% for i in 0..1 %>
+              <div class="main-display discover-item">
+                  <img />
+                  <div id="text-cont">
+                    <p id="add-show">Add</p>
+                  </div>
+                  <p id="sh-name"></p>
+              </div>
+            <% end %>
+            <% for i in 0..2 %>
+              <div class="small-display discover-item">
+                  <img />
+                  <div id="text-cont">
+                    <p id="add-show">Add</p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
         <div id="added-msg-cont">
         </div>
       </div>

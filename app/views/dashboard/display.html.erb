@@ -18,12 +18,12 @@
       <div class="tab-container">
         <div class="coll-tab">
           <div class="all_shows">
-            <% if @showCount < 2 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
+            <% if @showCount == 0 %> <!-- actual show list starts at count 2, thus why < 2 for no shows -->
               <div id="empty-msg">
                 <p>You haven't added any shows to your collection yet!
                   You can do so by clicking <%= link_to "/search" do %>here.<% end %></p>
               </div>
-            <% elsif @showCount > 1 %>
+            <% elsif @showCount > 0 %>
               <div id="post-cont-deleg" class="show_list">
                 <!-- for each show connected to the current user -->
                 <% @showInfo.each do |obj| %>
