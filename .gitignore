@@ -27,3 +27,6 @@
 /public/assets/*
 
 **/.DS_Store
+
+# Ignore secrets.yml
+/config/secrets.yml
