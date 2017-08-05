@@ -15,7 +15,7 @@ $.ajax(dbRequest).done(function (response) {
   $.each(response["results"], function(i, value){ // each value = a tv show array with various info
 
     if (value["poster_path"] == null) // if no poster, insert generic image instead
-      posterURL = "http://i.imgur.com/QOBPp8F.png"
+      posterURL = "https://i.imgur.com/QOBPp8F.png"
     else // otherwise, get poster
       posterURL = posterBaseUrl + value["poster_path"];
 

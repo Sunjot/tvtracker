@@ -10,13 +10,13 @@ $ ->
        children = document.getElementById(section).children;
        for i in [0..4]
          if i in [0..1]
-           src_url = "http://image.tmdb.org/t/p/w780" + response["results"][i]["backdrop_path"];
+           src_url = "https://image.tmdb.org/t/p/w780" + response["results"][i]["backdrop_path"];
            sh_name = response["results"][i]["name"];
            children[i].getElementsByTagName('p')[1].innerHTML += sh_name;
          else
-           src_url = "http://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
+           src_url = "https://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
 
-         poster_url = "http://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
+         poster_url = "https://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
          img_element = children[i].getElementsByTagName('img')[0];
          img_element.setAttribute('src', src_url);
          img_element.setAttribute('data-poster', poster_url);
@@ -40,7 +40,7 @@ $ ->
       $.ajax(airRequest).done (response) ->
         children = document.getElementById('suggested-list').children;
         for i in [0..5]
-          src_url = "http://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
+          src_url = "https://image.tmdb.org/t/p/w342" + response["results"][i]["poster_path"];
 
           img_element = children[i].getElementsByTagName('img')[0];
           img_element.setAttribute('src', src_url);
